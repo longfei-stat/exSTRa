@@ -7,10 +7,12 @@ Author: Rick Tankard
 Maintainer: Rick Tankard <rick.tankard@murdoch.edu.au>
 Description: Detecting expansions with paired-end Illumina sequencing data.
 License: GPL-2
+Encoding: UTF-8
+Depends:
+    data.table (>= 1.10.4-3)
 Imports: 
     testit (>= 0.7), 
     checkmate,
-    data.table (>= 1.10.4-3), 
     stringr (>= 1.2.0), 
     reshape2 (>= 1.4.3), 
     magrittr (>= 1.5), 
