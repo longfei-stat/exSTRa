@@ -20,13 +20,13 @@ For easy installation, run from within R:
 # Using exSTRa
 At present, the pipeline requires:
 - Paired-end Illumina sequencing. Has been tested with some whole-exome sequencing, and whole-genome sequencing with and without PCR in the library preparation step. (Testing on single-end data has not occured, but we presume it would perform poorly due to the affect on alignment.)
-- Alignment with bowtie2 in local mode (may work for other aligners and settings, not extensively tested due to computational time)
+- Alignment with bowtie2 in local mode is recommended. (Works for most other aligners and settings, however this has not been tested extensively.)
 - Sorting 
 - PCR duplicate marking (recommended)
 
-A database of repeats is required, with files for the known disorder loci included for hg19 or GRCh37 in the `inst/extdata` directory.
-A database of all STRs genome wide in available to [download from FigShare](https://figshare.com/s/bb1e6358781bb3ca12c2).
-An example script to generate this database of all STRs genome wide, or those in genes that are expressed in the brain, is provide in `inst/tools/prepare_exSTRa_input_db.R`.
+A database of repeats is required:
+- known repeat expansion disorder loci databases are included in the `inst/extdata` directory. Files are available for [hg19](https://github.com/bahlolab/exSTRa/blob/master/inst/extdata/repeat_expansion_disorders_hg19.txt), [GRCh37](https://github.com/bahlolab/exSTRa/blob/master/inst/extdata/repeat_expansion_disorders_grch37.txt), [hg38](https://github.com/bahlolab/exSTRa/blob/master/inst/extdata/repeat_expansion_disorders_hg38.txt), [GRCh38](https://github.com/bahlolab/exSTRa/blob/master/inst/extdata/repeat_expansion_disorders_grch38.txt).
+- genome wide STR databases based on the UCSC simple repeats track is available to [download from FigShare](https://figshare.com/s/bb1e6358781bb3ca12c2). (An example script to generate this database of all STRs genome wide, or those in genes that are expressed in the brain, is provide in `inst/tools/prepare_exSTRa_input_db.R`.)
 
 Use the Perl scripts and modules from https://github.com/bahlolab/Bio-STR-exSTRa to analyse reads in BAM files. This generates STR counts. 
 In the future this functionality may be included within the R exSTRa package. 
